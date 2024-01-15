@@ -37,7 +37,7 @@ const Header = () => {
 
           <ul className="flex gap-8">
             {navRoutes.map((route) => (
-              <Button variant={"ghost"}>
+              <Button key={route.href} variant={"ghost"}>
                 {" "}
                 <Link href={route.href}>{route.label}</Link>{" "}
               </Button>
