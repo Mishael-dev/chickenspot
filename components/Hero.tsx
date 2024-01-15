@@ -7,12 +7,12 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="mt-12 border-b border-slate-500/30 py-8">
+    <section className=" border-b border-slate-500/30 py-8">
       <Container>
         <div className="flex flex-col md:flex-row justify-between">
           <div className="md:text-7xl md:w-1/2">
             <h1 className=" text-6xl ">
-              Tired of eating tofu?dont worry we've got you.
+              Tired of eating tofu?dont worry we got you.
             </h1>
             <div className="hidden md:block mt-10">
               <P>

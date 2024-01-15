@@ -24,7 +24,7 @@ const navRoutes = [
 
 const Header = () => {
   return (
-    <header className="py-4 backdrop-blur border-b border-slate-500/30">
+    <header className="py-4 backdrop-blur border-b border-slate-500/30 mb-8">
       <Container>
         <div className="flex justify-between items-center ">
           <div>
