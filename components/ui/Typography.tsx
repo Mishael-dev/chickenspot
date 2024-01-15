@@ -12,32 +12,30 @@ const H1: React.FC<typographyProps> = ({ children }) => {
 
 const H2: React.FC<typographyProps> = ({ children }) => {
   return (
-    <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-5xl">
+    <h2 className="scroll-m-20 text-xl font-extrabold tracking-tight lg:text-4xl">
       {children}
-    </h1>
+    </h2>
   );
 };
 
 const H3: React.FC<typographyProps> = ({ children }) => {
   return (
-    <h1 className="scroll-m-20 text-2xl font-extrabold tracking-tight lg:text-5xl">
+    <h3 className="scroll-m-20 text-2xl font-extrabold tracking-tight lg:text-3xl">
       {children}
-    </h1>
+    </h3>
   );
 };
 
 const H4: React.FC<typographyProps> = ({ children }) => {
   return (
-    <h1 className="scroll-m-20 text-xl font-extrabold tracking-tight lg:text-5xl">
+    <h4 className="scroll-m-20 text-xl font-extrabold tracking-tight lg:text-2xl">
       {children}
-    </h1>
+    </h4>
   );
 };
 
 const P: React.FC<typographyProps> = ({ children }) => {
-  return (
-    <p className="leading-7 [&:not(:first-child)]:mt-6 text-base">{children}</p>
-  );
+  return <p className="leading-7 text-base max-w-full">{children}</p>;
 };
 
 const Blockquote: React.FC<typographyProps> = ({ children }) => {
