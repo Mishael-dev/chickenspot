@@ -1,7 +1,7 @@
 import { H1 } from "@/components/ui/Typography";
 import Container from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
-import MenuCard from "@/components/MenuCard";
+import MenuTabs from "@/components/MenuTabs";
 
 const Page = () => {
   return (
@@ -12,9 +12,7 @@ const Page = () => {
           Items in Cart <Badge>4</Badge>
         </div>
 
-        <section>
-          <MenuCard />
-        </section>
+        <MenuTabs />
       </Container>
     </div>
   );

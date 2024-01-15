@@ -4,6 +4,7 @@ import { H3, P } from "./ui/Typography";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Toggle } from "./ui/toggle";
+import type { CartItem } from "@/types";
 
 const menu = [
   {
@@ -24,10 +25,15 @@ const card = {
   availability: 7,
 };
 
-const categories = ["Fried", "Pepper chicken", "Southern Fried"];
 const parts = ["Wings", "Drumsticks", "Breast", "Back", "Hip", "Leg", "Thigh"];
 
-const MenuCard = () => {
+const MenuCard = ({
+  availability,
+  category,
+  part,
+  price,
+  description,
+}: CartItem) => {
   return (
     <Card className="w-full overflow-hidden sm:max-w-80">
       <CardContent className="p-0 relative">
@@ -39,15 +45,15 @@ const MenuCard = () => {
             src={"/images/drumstick.jpg"}
             className="backdrop-contrast-75"
           />
-          <Badge className="absolute top-5 left-5">{`${card.availability} Remaining`}</Badge>
+          <Badge className="absolute top-5 left-5">{`${availability} Remaining`}</Badge>
         </div>
       </CardContent>
       <CardFooter className="flex flex-col gap-y-2 items-start p-4 pb-6 ">
         <div className="flex items-center justify-between w-full">
-          <H3>{card.part}</H3>
-          <span className="text-2xl text-primary font-bold">{`₦${card.price}`}</span>
+          <H3>{part}</H3>
+          <span className="text-2xl text-primary font-bold">{`₦${price}`}</span>
         </div>
-        <P>{card.description}</P>
+        <P>{description}</P>
         <Button className="w-full">Add to cart</Button>
       </CardFooter>
     </Card>
