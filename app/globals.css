@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "lora";
+  src: url("/assets/fonts/lora/static/Lora-Regular.ttf");
+}
+
+@font-face {
+  font-family: "nunito";
+  src: url("/assets/fonts/nunito/static/NunitoSans_10pt-Regular.ttf");
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
