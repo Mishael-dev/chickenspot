@@ -217,8 +217,10 @@ const MenuTabs = () => {
       <Tabs className="" defaultValue="Fried">
         <div className="overflow-x-scroll sm:overflow-visible pb-4 sm:pb-0">
           <TabsList className=" w-full min-w-fit sm:w-full flex justify-evenly ">
-            {categories.map((category) => (
-              <TabsTrigger value={category}>{category}</TabsTrigger>
+            {categories.map((category, index) => (
+              <TabsTrigger value={category} key={index}>
+                {category}
+              </TabsTrigger>
             ))}
           </TabsList>
         </div>
