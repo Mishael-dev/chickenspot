@@ -1,3 +1,4 @@
+"use client";
 import { Card, CardContent, CardFooter } from "./ui/card";
 import Image from "next/image";
 import { H3, P } from "./ui/Typography";
@@ -5,6 +6,9 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Toggle } from "./ui/toggle";
 import type { CartItem } from "@/types";
+import { useCartStore } from "@/store";
+import { useEffect, useState } from "react";
+import classnames from "classnames";
 
 const menu = [
   {
@@ -28,12 +32,39 @@ const card = {
 const parts = ["Wings", "Drumsticks", "Breast", "Back", "Hip", "Leg", "Thigh"];
 
 const MenuCard = ({
+  id,
   availability,
   category,
   part,
   price,
   description,
 }: CartItem) => {
+  const addToCart = useCartStore((state: any) => state.addToCart);
+  const removeFromCart = useCartStore((state: any) => state.removeFromCart);
+  const cart = useCartStore((state: any) => state.cart);
+
+  const [isInCart, setIsInCart] = useState(false);
+
+  const handleCartBtnClick = () => {
+    if (isInCart == false) {
+      setIsInCart(true);
+      addToCart({
+        id: id,
+        part: part,
+        price: price,
+        description: description,
+        availability: availability,
+      });
+    } else if (isInCart == true) {
+      setIsInCart(false);
+      removeFromCart(id);
+    }
+  };
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
+
   return (
     <Card className="w-full overflow-hidden sm:max-w-80">
       <CardContent className="p-0 relative">
@@ -54,7 +85,22 @@ const MenuCard = ({
           <span className="text-2xl text-primary font-bold">{`₦${price}`}</span>
         </div>
         <P>{description}</P>
-        <Button className="w-full">Add to cart</Button>
+        <>
+          <Button
+            className={classnames({ "w-full": true, hidden: isInCart })}
+            onClick={handleCartBtnClick}
+          >
+            Add to cart
+          </Button>
+
+          <Button
+            variant={"secondary"}
+            className={classnames({ "w-full": true, hidden: !isInCart })}
+            onClick={handleCartBtnClick}
+          >
+            Added to cart
+          </Button>
+        </>
       </CardFooter>
     </Card>
   );

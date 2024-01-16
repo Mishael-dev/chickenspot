@@ -214,7 +214,7 @@ const menu: Menu = {
 const MenuTabs = () => {
   return (
     <section>
-      <Tabs className="" defaultValue="Fried">
+      <Tabs className="mt-8" defaultValue="Fried">
         <div className="overflow-x-scroll sm:overflow-visible pb-4 sm:pb-0">
           <TabsList className=" w-full min-w-fit sm:w-full flex justify-evenly ">
             {categories.map((category, index) => (
