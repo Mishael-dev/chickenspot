@@ -19,7 +19,7 @@ const Page = () => {
         <Container>
           <div className="flex justify-between items-center">
             <CartItemsIndicator />
-            <Link href="/checkout">
+            <Link href="/menu/checkout">
               <Button variant={"secondary"}>
                 Complete order <ShoppingCart className="ml-2" />
               </Button>

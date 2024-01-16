@@ -54,6 +54,7 @@ const MenuCard = ({
         price: price,
         description: description,
         availability: availability,
+        number: 1,
       });
     } else if (isInCart == true) {
       setIsInCart(false);

@@ -20,6 +20,15 @@ export interface Menu {
   "southern fried": CartItem[];
 }
 
+export interface MenuItem {
+  id: Number;
+  part: Part;
+  price: Number;
+  description: String;
+  category: Category;
+  availability: number;
+}
+
 export interface CartItem {
   id: Number;
   part: Part;
@@ -27,4 +36,5 @@ export interface CartItem {
   description: String;
   category: Category;
   availability: number;
+  number: Number;
 }
