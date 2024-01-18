@@ -1,17 +1,16 @@
 import Image from "next/image";
 import { H3 } from "./ui/Typography";
 import { Button } from "./ui/button";
-import { Ghost } from "lucide-react";
 import { Plus, Minus } from "lucide-react";
 import type { CartItem } from "@/types";
 import { useCartStore } from "@/store";
 
 const CheckoutCard = ({ price, part, number, id }: CartItem) => {
   const incrementItemNumber = useCartStore(
-    (state: any) => state.decrementItemNumber
+    (state: any) => state.incrementItemNumber
   );
   const decrementItemNumber = useCartStore(
-    (state: any) => state.incrementItemNumber
+    (state: any) => state.decrementItemNumber
   );
 
   const handleItemNumberIncrement = () => {
