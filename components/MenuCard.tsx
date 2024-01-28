@@ -44,7 +44,6 @@ const MenuCard = ({
   const cart = useCartStore((state) => state.cart);
 
   const [isInCart, setIsInCart] = useState(false);
-  console.log(useCartStore().addToCart)
 
   const handleCartBtnClick = () => {
     if (isInCart == false) {
@@ -62,10 +61,6 @@ const MenuCard = ({
       removeFromCart(id);
     }
   };
-
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
 
   return (
     <Card className="w-full overflow-hidden sm:max-w-80">
