@@ -1,18 +1,12 @@
 import { create } from "zustand";
 
-// type cartItem = {
-//   id: Number;
-//   part: String;
-//   price: Number;
-// };
-
 const useCartStore = create((set) => ({
   cart: [],
-  addToCart: (item: any) =>
-    set((state: any) => ({ cart: [...state.cart, item] })),
-  removeFromCart: (productId: any) =>
-    set((state: any) => ({
-      cart: state.cart.filter((item: any) => item.id !== productId),
+  addToCart: (item) =>
+    set((state) => ({ cart: [...state.cart, item] })),
+  removeFromCart: (productId) =>
+    set((state) => ({
+      cart: state.cart.filter((item) => item.id !== productId),
     })),
   incrementItemNumber: (productId) =>
     set((state) => {

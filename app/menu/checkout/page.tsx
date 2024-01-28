@@ -7,7 +7,7 @@ const page = () => {
     <div className="pb-60">
       <Container>
         <H1>Checkout</H1>
-        <CheckoutTab />
+        <CheckoutTab/>
       </Container>
     </div>
   );

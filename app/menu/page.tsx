@@ -7,7 +7,15 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
-const Page = () => {
+async function getData(){
+  const res = await(fetch("/api/inventory"));
+  if (!res.ok){
+    throw new Error("failed to fetch data")
+  }
+}
+
+const Page = async () => {
+
   return (
     <div className="pb-80 relative">
       <Container>

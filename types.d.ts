@@ -21,20 +21,20 @@ export interface Menu {
 }
 
 export interface MenuItem {
-  id: Number;
+  id: number;
   part: Part;
-  price: Number;
+  price: number;
   description: String;
   category: Category;
   availability: number;
 }
 
 export interface CartItem {
-  id: Number;
+  id: number;
   part: Part;
-  price: Number;
+  price: number;
   description: String;
   category: Category;
   availability: number;
-  number: Number;
+  number: number;
 }

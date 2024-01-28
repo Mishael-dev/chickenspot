@@ -33,3 +33,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+const URL = "http://localhost:3000/";

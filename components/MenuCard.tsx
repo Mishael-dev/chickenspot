@@ -5,7 +5,7 @@ import { H3, P } from "./ui/Typography";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Toggle } from "./ui/toggle";
-import type { CartItem } from "@/types";
+import type { CartItem, MenuItem } from "@/types";
 import { useCartStore } from "@/store";
 import { useEffect, useState } from "react";
 import classnames from "classnames";
@@ -38,12 +38,13 @@ const MenuCard = ({
   part,
   price,
   description,
-}: CartItem) => {
-  const addToCart = useCartStore((state: any) => state.addToCart);
-  const removeFromCart = useCartStore((state: any) => state.removeFromCart);
-  const cart = useCartStore((state: any) => state.cart);
+}: MenuItem) => {
+  const addToCart = useCartStore((state) => state.addToCart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+  const cart = useCartStore((state) => state.cart);
 
   const [isInCart, setIsInCart] = useState(false);
+  console.log(useCartStore().addToCart)
 
   const handleCartBtnClick = () => {
     if (isInCart == false) {
