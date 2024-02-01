@@ -7,14 +7,6 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
-async function getData(){
-  const res = await(fetch("/api/inventory"));
-  if (!res.ok){
-    throw new Error("failed to fetch data")
-  }
-  
-}
-
 const Page = async () => {
 
   return (
