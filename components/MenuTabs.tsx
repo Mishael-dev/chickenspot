@@ -9,10 +9,15 @@ const categories = ["Barbecue", "Fried", "Pepper Chicken", "Southern Fried"];
 const parts = ["Wings", "Drumsticks", "Breast", "Back", "Hip", "Leg", "Thigh"];
 
 async function getData() {
-  const res = await fetch( process.env.URL + "/api/inventory");
-  const data = await res.json()
+  const res = await fetch(process.env.URL + "/api/inventory", {
+    next: {
+      revalidate: 3600,
+    },
+  });
+  const data = await res.json();
+  console.log(data);
 
-  return data
+  return data;
 }
 
 const Inventory = async () => {
@@ -20,7 +25,7 @@ const Inventory = async () => {
 
   return inventory.data.length
     ? inventory.data.map((item: MenuItem, index: number) => {
-        return <MenuCard key={index} {...item} />
+        return <MenuCard key={index} {...item} />;
       })
     : "Sorry an error occured :( \nmake sure you have active internet connection";
 };

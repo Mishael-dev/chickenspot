@@ -12,6 +12,7 @@ async function getData(){
   if (!res.ok){
     throw new Error("failed to fetch data")
   }
+  
 }
 
 const Page = async () => {
