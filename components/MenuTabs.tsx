@@ -15,6 +15,7 @@ async function getData() {
     },
   });
   const data = await res.json();
+  console.log(process.env.URL);
   console.log(data);
 
   return data;
